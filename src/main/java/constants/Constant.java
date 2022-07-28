@@ -159,7 +159,7 @@ public class Constant {
         public static final int NUMBER_OF_READ_REVIEW_SUGAR_DADDIES_PAGE = 3;
         public static final int NUMBER_OF_READ_FULL_REVIEW_SUGAR_DADDIES_PAGE = 5;
         public static final int NUMBER_OF_READ_FULL_REVIEW_LOCAL_HOOKUP_PAGE = 10;
-        public static final int NUMBER_OF_ARTICLES_LOCAL_HOOKUP_PAGE = 17;
+        public static final int NUMBER_OF_ARTICLES_LOCAL_HOOKUP_PAGE = 10;
         public static final int NUMBER_OF_RED_REVIEW_LOCAL_HOOKUP_PAGE = 5;
     }
 
