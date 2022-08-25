@@ -1,7 +1,7 @@
 package tests.contactUs;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import tests.base.BaseTest;
 
 import static constants.Constant.CommentForm.*;
@@ -11,21 +11,21 @@ import static constants.Constant.Header.HEADER_TITLES;
 import static constants.Constant.Header.NUMBER_OF_GOOD_HEADER_BUTTONS;
 import static constants.Constant.Urls.CONTACT_US_PAGE_URL;
 import static constants.Constant.Urls.MAIN_PAGE_URL;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class ContactUsTest extends BaseTest {
 
-    @BeforeEach
+    @BeforeMethod
     public void setUp () {
         startDriver("contactUs");
         basePage.goToUrl(CONTACT_US_PAGE_URL);
         basePage.waitOneSeconds();
-        basePage.closePopup();
     }
 
-    @Test
+    @Test(invocationCount = 2, successPercentage = 99)
     public void headerButtonsTest () {
+        basePage.closePopup();
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_GOOD_HEADER_BUTTONS; i++) {
             basePage.headerMenuOpen();
@@ -39,8 +39,9 @@ public class ContactUsTest extends BaseTest {
         assertEquals(NUMBER_OF_GOOD_HEADER_BUTTONS, goodTitlesCount);
     }
 
-    @Test
+    @Test(invocationCount = 2, successPercentage = 99)
     public void footerButtonsTest () {
+        basePage.closePopup();
         int goodTitlesCount = 0;
         for (int i = 1; i <= NUMBER_OF_GOOD_FOOTER_BUTTONS; i++) {
             if (i == 40) {i++; goodTitlesCount++;}
@@ -54,32 +55,35 @@ public class ContactUsTest extends BaseTest {
         assertEquals(NUMBER_OF_GOOD_FOOTER_BUTTONS, goodTitlesCount);
     }
 
-    @Test
+    @Test(invocationCount = 2, successPercentage = 99)
     public void mainLogoLinkTest () {
+        basePage.closePopup();
         basePage.mainLogoButtonClick();
         basePage.waitOneSeconds();
         assertEquals(MAIN_PAGE_URL, basePage.getCurrentUrl());
     }
 
-    @Test
+    @Test(invocationCount = 2, successPercentage = 99)
     public void successfulCommentFormTest () {
+        basePage.closePopup();
         contactUsPage.enterName(NAME)
                 .enterEmail(EMAIL)
                 .enterSubject(SUBJECT)
                 .enterComment(COMMENT)
                 .submitButtonClick();
-        basePage.waitFiveSeconds();
+        basePage.waitTwoSeconds();
         assertTrue(contactUsPage.submitMessageVisibleCheck());
     }
 
-    @Test
+    @Test(invocationCount = 2, successPercentage = 99)
     public void unsuccessfulCommentFormTest () {
+        basePage.closePopup();
         contactUsPage.enterName(EMPTY)
                 .enterEmail(EMPTY)
                 .enterSubject(EMPTY)
                 .enterComment(EMPTY)
                 .submitButtonClick();
-        basePage.waitFiveSeconds();
+        basePage.waitTwoSeconds();
         assertTrue(contactUsPage.inputErrorVisibleCheck());
     }
 

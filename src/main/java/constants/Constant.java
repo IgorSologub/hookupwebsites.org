@@ -89,7 +89,12 @@ public class Constant {
                 "Jucydate",
                 "Craigslist",
                 "Exciting talks and flirting with hot girls!",
-                "Exciting chats with hot women"
+                "Exciting chats with hot women",
+                "Casualdating",
+                "Loveeto.com",
+                "Find the one who's right for you",
+                "BeSexcited",
+                "My Dirty Neighbour"
         );
         public static final int NUMBER_OF_DOWNLOAD_APP_REG_BUTTONS = 5;
         public static final int NUMBER_OF_VISIT_SITE_REG_BUTTONS = 24;
