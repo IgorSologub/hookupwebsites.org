@@ -65,7 +65,7 @@ public class Constant {
                 "Women",
                 "Match"
         );
-        public static final int NUMBER_OF_GOOD_FOOTER_BUTTONS = 47;
+        public static final int NUMBER_OF_GOOD_FOOTER_BUTTONS = 40;
     }
 
     public static class Reg {
@@ -95,7 +95,8 @@ public class Constant {
                 "Find the one who's right for you",
                 "BeSexcited",
                 "My Dirty Neighbour",
-                "Online Hookups"
+                "Online Hookups",
+                "naughty-hub.com"
         );
         public static final int NUMBER_OF_DOWNLOAD_APP_REG_BUTTONS = 5;
         public static final int NUMBER_OF_VISIT_SITE_REG_BUTTONS = 24;
